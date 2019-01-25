@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func runFuncFile() {
 	rand.Seed(time.Now().UnixNano())
 	fmt.Println("Hello World!!", rand.Intn(100))
 }

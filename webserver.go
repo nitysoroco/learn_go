@@ -5,16 +5,17 @@ import (
 	"net/http"
 )
 
-func index_handler(w http.ResponseWriter, r *http.Request) {
+func indexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Whoa! Go is neat!!")
 }
 
-func about_handler(w http.ResponseWriter, r *http.Request) {
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "This is my about")
 }
 
-func main() {
-	http.HandleFunc("/", index_handler)
-	http.HandleFunc("/about/", about_handler)
+// StartWebserver : call this function to start a fresh webserver
+func StartWebserver() {
+	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/about/", aboutHandler)
 	http.ListenAndServe(":8000", nil)
 }

@@ -20,7 +20,7 @@ func say(s string) {
 	wg.Done()
 }
 
-func main() {
+func runConcurrency() {
 
 	wg.Add(1)
 	go say("Hello")
